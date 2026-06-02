@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:#0B1F3A;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:15px;
+width:340px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h2{
+color:#0B1F3A;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+background:#f5f7fa;
+border-radius:10px;
+outline:none;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+color:white;
+}
+
+.loginBtn{
+background:#FF9933;
+}
+
+.googleBtn{
+background:#4285F4;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Student Login</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button class="loginBtn" onclick="signupOrLogin()">
+Create Account / Login
+</button>
+
+<button class="googleBtn" onclick="googleLogin()">
+Continue with Google
+</button>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getAuth,
+GoogleAuthProvider,
+signInWithPopup,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+// 🔥 FIREBASE CONFIG
+const firebaseConfig = {
+
+apiKey: "AIzaSyCUL7XkQQGiQmYqORGxemvzVx8gmdpNaT8",
+
+authDomain: "aastha-vidya-mandir.firebaseapp.com",
+
+projectId: "aastha-vidya-mandir",
+
+storageBucket: "aastha-vidya-mandir.firebasestorage.app",
+
+messagingSenderId: "1092138801537",
+
+appId: "1:1092138801537:web:c9954a5ccdb9dc845bb080",
+
+measurementId: "G-KL15YPQ3N3"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const provider = new GoogleAuthProvider();
+
+
+// ✅ AUTO LOGIN CHECK
+onAuthStateChanged(auth,(user)=>{
+
+if(user){
+window.location.href = "student-dashboard.html";
+}
+
+});
+
+
+// ✅ GOOGLE LOGIN
+window.googleLogin = async function(){
+
+try{
+
+await signInWithPopup(auth,provider);
+
+window.location.href = "student-dashboard.html";
+
+}catch(error){
+
+alert(error.message);
+
+}
+
+};
+
+
+// ✅ EMAIL SIGNUP / LOGIN
+window.signupOrLogin = async function(){
+
+const email = document.getElementById("email").value;
+
+const password = document.getElementById("password").value;
+
+if(email === "" || password === ""){
+
+alert("Enter email and password");
+
+return;
+
+}
+
+try{
+
+// TRY LOGIN
+await signInWithEmailAndPassword(auth,email,password);
+
+window.location.href = "student-dashboard.html";
+
+}catch{
+
+try{
+
+// IF LOGIN FAIL → CREATE ACCOUNT
+await createUserWithEmailAndPassword(auth,email,password);
+
+window.location.href = "student-dashboard.html";
+
+}catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+};
+
+</script>
+
+</body>
+</html>

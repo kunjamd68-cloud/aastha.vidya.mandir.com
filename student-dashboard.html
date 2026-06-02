@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:#f5f7fa;
+}
+
+.header{
+background:#0B1F3A;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.card{
+background:white;
+margin:20px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#0B1F3A;
+}
+
+.info{
+line-height:1.8;
+}
+
+.logoutBtn{
+margin-top:20px;
+padding:12px;
+width:100%;
+background:red;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.logoutBtn:hover{
+opacity:0.9;
+}
+
+/* PROFILE CARD */
+
+.profileCard{
+background:#151B2E;
+margin:20px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+color:white;
+text-align:center;
+}
+
+.profileCard img{
+width:110px;
+height:110px;
+border-radius:50%;
+border:4px solid #FF9933;
+object-fit:cover;
+margin-bottom:15px;
+}
+
+.profileCard h2{
+margin:10px 0;
+color:white;
+}
+
+.profileInfo{
+margin-top:15px;
+text-align:left;
+line-height:1.8;
+background:#0B1020;
+padding:15px;
+border-radius:15px;
+}
+
+.profileInfo p{
+margin:8px 0;
+}
+
+.tag{
+display:inline-block;
+background:#FF9933;
+padding:6px 12px;
+border-radius:20px;
+font-size:14px;
+margin-top:10px;
+}
+
+/* NOTICE BOARD */
+
+.noticeBoard{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.noticeBoard h2{
+margin-bottom:15px;
+color:#FF9933;
+}
+
+.notice{
+background:#0B1020;
+padding:15px;
+border-radius:15px;
+margin-top:12px;
+border-left:5px solid #FF9933;
+transition:0.3s;
+}
+
+.notice:hover{
+transform:translateY(-3px);
+}
+
+.noticeTitle{
+font-weight:bold;
+font-size:16px;
+margin-bottom:6px;
+}
+
+.noticeDate{
+font-size:13px;
+color:#aaa;
+margin-top:8px;
+}
+
+/* ATTENDANCE */
+
+.attendanceCard{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.attendanceTop{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.attendancePercent{
+font-size:28px;
+font-weight:bold;
+color:#FF9933;
+}
+
+.progressBox{
+width:100%;
+height:14px;
+background:#0B1020;
+border-radius:20px;
+overflow:hidden;
+margin-top:10px;
+}
+
+.progressBar{
+height:100%;
+width:92%;
+background:#FF9933;
+border-radius:20px;
+}
+
+.attendanceStats{
+margin-top:15px;
+line-height:1.8;
+color:#ddd;
+}
+
+/* HOMEWORK */
+
+.homeworkSection{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.homeworkGrid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+margin-top:15px;
+}
+
+.homeworkCard{
+background:#0B1020;
+padding:15px;
+border-radius:15px;
+border-left:5px solid #FF9933;
+transition:0.3s;
+}
+
+.homeworkCard:hover{
+transform:translateY(-4px);
+}
+
+.subject{
+font-size:18px;
+font-weight:bold;
+color:#FF9933;
+margin-bottom:8px;
+}
+
+.deadline{
+margin-top:10px;
+font-size:13px;
+color:#aaa;
+}
+
+/* JEE NEET SECTION */
+
+.examSection{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.examGrid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+margin-top:15px;
+}
+
+.examCard{
+background:#0B1020;
+padding:18px;
+border-radius:15px;
+border-left:5px solid #FF9933;
+transition:0.3s;
+}
+
+.examCard:hover{
+transform:translateY(-4px);
+}
+
+.examTitle{
+font-size:18px;
+font-weight:bold;
+color:#FF9933;
+margin-bottom:10px;
+}
+
+.downloadBtn{
+display:inline-block;
+margin-top:12px;
+padding:10px 15px;
+background:#FF9933;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:14px;
+font-weight:bold;
+}
+
+.downloadBtn:hover{
+opacity:0.9;
+}
+
+/* ACHIEVEMENTS */
+
+.achievementSection{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.achievementGrid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+margin-top:15px;
+}
+
+.achievementCard{
+background:#0B1020;
+padding:18px;
+border-radius:15px;
+border-left:5px solid gold;
+transition:0.3s;
+}
+
+.achievementCard:hover{
+transform:translateY(-4px);
+}
+
+.achievementTitle{
+font-size:18px;
+font-weight:bold;
+color:gold;
+margin-bottom:10px;
+}
+
+.rankTag{
+display:inline-block;
+margin-top:12px;
+background:gold;
+color:black;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+font-weight:bold;
+}
+
+/* STUDY MATERIAL */
+
+.librarySection{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.libraryGrid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+margin-top:15px;
+}
+
+.libraryCard{
+background:#0B1020;
+padding:18px;
+border-radius:15px;
+border-left:5px solid #00C2FF;
+transition:0.3s;
+}
+
+.libraryCard:hover{
+transform:translateY(-4px);
+}
+
+.libraryTitle{
+font-size:18px;
+font-weight:bold;
+color:#00C2FF;
+margin-bottom:10px;
+}
+
+.fileBtn{
+display:inline-block;
+margin-top:12px;
+padding:10px 15px;
+background:#00C2FF;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:14px;
+font-weight:bold;
+}
+/* SPORTS & EVENTS */
+
+.sportsSection{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.sportsGrid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+margin-top:15px;
+}
+
+.sportsCard{
+background:#0B1020;
+padding:18px;
+border-radius:15px;
+border-left:5px solid #00E676;
+transition:0.3s;
+}
+
+.sportsCard:hover{
+transform:translateY(-4px);
+}
+
+.sportsTitle{
+font-size:18px;
+font-weight:bold;
+color:#00E676;
+margin-bottom:10px;
+}
+
+.eventDate{
+margin-top:10px;
+font-size:13px;
+color:#aaa;
+}
+/* HOSTEL & TRANSPORT */
+
+.hostelSection{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.hostelGrid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+margin-top:15px;
+}
+
+.hostelCard{
+background:#0B1020;
+padding:18px;
+border-radius:15px;
+border-left:5px solid #FF5252;
+transition:0.3s;
+}
+
+.hostelCard:hover{
+transform:translateY(-4px);
+}
+
+.hostelTitle{
+font-size:18px;
+font-weight:bold;
+color:#FF5252;
+margin-bottom:10px;
+}
+
+.hostelInfo{
+margin-top:10px;
+line-height:1.7;
+color:#ddd;
+}
+/* SETTINGS */
+
+.settingsSection{
+background:#151B2E;
+margin:20px;
+padding:20px;
+border-radius:20px;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+.settingsBtn{
+display:block;
+width:100%;
+margin-top:15px;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#0B1020;
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.settingsBtn:hover{
+background:#FF9933;
+}
+
+.logoutBtn{
+margin-top:20px;
+padding:14px 25px;
+background:#FF5252;
+border:none;
+border-radius:12px;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.logoutBtn:hover{
+transform:scale(1.03);
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding:25px;
+color:#aaa;
+font-size:14px;
+margin-top:30px;
+}
+/* PROFILE EDITOR */
+
+.profileEditor{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.editorBox{
+background:#151B2E;
+padding:25px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+color:white;
+}
+
+.editorBox input{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:none;
+border-radius:10px;
+background:#0B1020;
+color:white;
+}
+
+.saveBtn{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+background:#FF9933;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.closeBtn{
+background:red;
+}
+.darkMode{
+background:#000;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>🎓 Student Dashboard</h1>
+</div>
+
+<div id="content"></div>
+
+<div class="profileEditor" id="profileEditor">
+
+<div class="editorBox">
+
+<h2>👤 Edit Profile</h2>
+
+<input type="text" id="editName" placeholder="Student Name">
+
+<input type="text" id="editClass" placeholder="Class">
+
+<input type="text" id="editMobile" placeholder="Mobile Number">
+
+<input type="text" id="editPhoto" placeholder="Photo URL">
+
+<button class="saveBtn" onclick="saveProfile()">
+Save Profile
+</button>
+
+<button class="saveBtn closeBtn" onclick="closeEditor()">
+Close
+</button>
+
+</div>
+
+</div>
+
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getAuth,
+onAuthStateChanged,
+signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+// 🔥 FIREBASE CONFIG
+const firebaseConfig = {
+
+apiKey: "AIzaSyCUL7XkQQGiQmYqORGxemvzVx8gmdpNaT8",
+
+authDomain: "aastha-vidya-mandir.firebaseapp.com",
+
+projectId: "aastha-vidya-mandir",
+
+storageBucket: "aastha-vidya-mandir.firebasestorage.app",
+
+messagingSenderId: "1092138801537",
+
+appId: "1:1092138801537:web:c9954a5ccdb9dc845bb080",
+
+measurementId: "G-KL15YPQ3N3"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+if(localStorage.getItem("darkMode") === "true"){
+
+document.body.classList.add("darkMode");
+
+}
+
+
+// ✅ LOGIN CHECK
+onAuthStateChanged(auth,(user)=>{
+
+if(!user){
+
+window.location.href = "login.html";
+
+}else{
+
+document.getElementById("content").innerHTML = `
+
+<div class="profileCard">
+
+<img id="studentPhoto" src="${localStorage.getItem("studentPhoto") || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}">
+
+<h2>
+Welcome ${
+user.displayName || 
+user.email.split("@")[0]
+} 👋
+</h2>
+
+<div class="tag">
+Aastha Vidya Mandir
+</div>
+
+<div class="profileInfo">
+
+<p><b>📧 Email:</b> ${user.email}</p>
+
+<p><b>🆔 User ID:</b> ${user.uid}</p>
+
+<p><b>🔐 Login Provider:</b> 
+${user.providerData[0].providerId}
+</p>
+
+<p><b>🎓 Status:</b> Active Student</p>
+
+</div>
+
+<button class="logoutBtn" onclick="logout()">
+Logout
+</button>
+
+</div>
+
+`;
+
+// ✅ LOGOUT
+window.logout = async function(){
+
+await signOut(auth);
+
+window.location.href = "login.html";
+
+};
+
+
+// OPEN EDITOR
+window.openProfileEditor = function(){
+
+document.getElementById("profileEditor").style.display = "flex";
+
+};
+
+
+// CLOSE EDITOR
+window.closeEditor = function(){
+
+document.getElementById("profileEditor").style.display = "none";
+
+};
+
+
+// SAVE PROFILE
+window.saveProfile = function(){
+
+localStorage.setItem(
+"studentName",
+document.getElementById("editName").value
+);
+
+localStorage.setItem(
+"studentPhoto",
+document.getElementById("editPhoto").value
+);
+
+alert("Profile Updated");
+
+location.reload();
+
+};
+// 🔔 NOTIFICATION
+window.openNotification = function(){
+
+alert(
+"Notifications Enabled 🔔\n\nYou will receive:\n• Homework Updates\n• Exam Notices\n• School Announcements"
+);
+
+};
+
+
+// 🌙 DARK MODE
+window.toggleDarkMode = function(){
+
+document.body.classList.toggle("darkMode");
+
+localStorage.setItem(
+"darkMode",
+document.body.classList.contains("darkMode")
+);
+
+};
+
+
+// 📞 HELP & SUPPORT
+window.openHelp = function(){
+
+alert(
+"Aastha Vidya Mandir Support\n\n📞 +91 9876543210\n📧 support@aasthavidyamandir.com"
+);
+
+};
+document.getElementById("content").innerHTML += `
+
+<div class="noticeBoard">
+
+<h2>📢 Notice Board</h2>
+
+<div class="notice">
+
+<div class="noticeTitle">
+Unit Test Starts From Monday
+</div>
+
+<div>
+All students must bring admit card and school ID card.
+</div>
+
+<div class="noticeDate">
+29 May 2026
+</div>
+
+</div>
+
+<div class="notice">
+
+<div class="noticeTitle">
+Summer Vacation Notice
+</div>
+
+<div>
+School will remain closed from 10 June to 18 June.
+</div>
+
+<div class="noticeDate">
+28 May 2026
+</div>
+
+</div>
+
+<div class="notice">
+
+<div class="noticeTitle">
+JEE / NEET Special Classes
+</div>
+
+<div>
+Extra coaching classes will start at 7:00 AM daily.
+</div>
+
+<div class="noticeDate">
+27 May 2026
+</div>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("content").innerHTML += `
+
+<div class="attendanceCard">
+
+<div class="attendanceTop">
+
+<h2>📅 Attendance</h2>
+
+<div class="attendancePercent">
+92%
+</div>
+
+</div>
+
+<div class="progressBox">
+<div class="progressBar"></div>
+</div>
+
+<div class="attendanceStats">
+
+<p>✅ Present Days: 184</p>
+
+<p>❌ Absent Days: 16</p>
+
+<p>🏫 Total Working Days: 200</p>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("content").innerHTML += `
+
+<div class="homeworkSection">
+
+<h2>📚 Homework & Assignments</h2>
+
+<div class="homeworkGrid">
+
+<div class="homeworkCard">
+
+<div class="subject">
+📘 Physics
+</div>
+
+<div>
+Complete Numericals of Motion in Straight Line Chapter.
+</div>
+
+<div class="deadline">
+Submission: 2 June 2026
+</div>
+
+</div>
+
+<div class="homeworkCard">
+
+<div class="subject">
+📗 Mathematics
+</div>
+
+<div>
+Solve Trigonometry Exercise 3.2 from NCERT.
+</div>
+
+<div class="deadline">
+Submission: 3 June 2026
+</div>
+
+</div>
+
+<div class="homeworkCard">
+
+<div class="subject">
+🧪 Chemistry
+</div>
+
+<div>
+Learn periodic table first 20 elements and valency.
+</div>
+
+<div class="deadline">
+Submission: 4 June 2026
+</div>
+
+</div>
+
+<div class="homeworkCard">
+
+<div class="subject">
+🚀 JEE Practice
+</div>
+
+<div>
+Solve 25 MCQs from Units & Dimensions module.
+</div>
+
+<div class="deadline">
+Submission: Daily Practice
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+document.getElementById("content").innerHTML += `
+
+<div class="examSection">
+
+<h2>🧪 JEE / NEET Preparation</h2>
+
+<div class="examGrid">
+
+<div class="examCard">
+
+<div class="examTitle">
+🚀 JEE Physics Module
+</div>
+
+<div>
+Units & Dimensions + Motion chapter notes and MCQs.
+</div>
+
+<a href="https://ncert.nic.in/textbook/pdf/keph101.pdf"
+target="_blank"
+class="downloadBtn">
+Download Notes
+</a>
+
+</div>
+
+<div class="examCard">
+
+<div class="examTitle">
+🧬 NEET Biology Notes
+</div>
+
+<div>
+Cell Structure handwritten notes and important diagrams.
+</div>
+
+<a href="https://ncert.nic.in/textbook/pdf/kebo101.pdf"
+target="_blank"
+class="downloadBtn">
+Download PDF
+</a>
+
+</div>
+
+<div class="examCard">
+
+<div class="examTitle">
+📘 Mathematics Formula Sheet
+</div>
+
+<div>
+Complete Class 11 formula revision sheet for JEE Main.
+</div>
+
+<a href="https://ncert.nic.in/textbook/pdf/kemh101.pdf"
+target="_blank"
+class="downloadBtn">
+Open File
+</a>
+
+</div>
+
+<div class="examCard">
+
+<div class="examTitle">
+🔥 PYQ Practice
+</div>
+
+<div>
+Previous Year Questions with solutions for practice.
+</div>
+
+<a href="https://jeemain.nta.nic.in/"
+target="_blank"
+class="downloadBtn">
+Start Practice
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("content").innerHTML += `
+
+<div class="achievementSection">
+
+<h2>🏆 Achievements & Toppers</h2>
+
+<div class="achievementGrid">
+
+<div class="achievementCard">
+
+<div class="achievementTitle">
+🥇 JEE Main Topper
+</div>
+
+<div>
+Rohit Kumar secured 98.2 percentile in JEE Main 2026.
+</div>
+
+<div class="rankTag">
+AIR Preparation Batch
+</div>
+
+</div>
+
+<div class="achievementCard">
+
+<div class="achievementTitle">
+🧬 NEET Achievement
+</div>
+
+<div>
+Anjali Verma scored 670 marks in NEET mock test series.
+</div>
+
+<div class="rankTag">
+Medical Aspirant
+</div>
+
+</div>
+
+<div class="achievementCard">
+
+<div class="achievementTitle">
+⚽ Sports Championship
+</div>
+
+<div>
+School football team won district-level championship.
+</div>
+
+<div class="rankTag">
+District Winner
+</div>
+
+</div>
+
+<div class="achievementCard">
+
+<div class="achievementTitle">
+📚 Academic Excellence
+</div>
+
+<div>
+Class 10 board result achieved 100% pass percentage.
+</div>
+
+<div class="rankTag">
+CBSE Result
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("content").innerHTML += `
+
+<div class="librarySection">
+
+<h2>📖 Study Material & Library</h2>
+
+<div class="libraryGrid">
+
+<div class="libraryCard">
+
+<div class="libraryTitle">
+📘 Physics Formula Sheet
+</div>
+
+<div>
+Important Class 11 Physics formulas for revision.
+</div>
+
+<a href="https://ncert.nic.in/textbook/pdf/keph101.pdf"
+target="_blank"
+class="fileBtn">
+Open PDF
+</a>
+
+</div>
+
+<div class="libraryCard">
+
+<div class="libraryTitle">
+📗 Chemistry Notes
+</div>
+
+<div>
+Periodic Table handwritten notes and reactions.
+</div>
+
+<a href="https://drive.google.com/file/d/1Rzs2MESsmXTyQz6lhQEOP14x0JqvQDGq/view?usp=drivesdk"
+target="_blank"
+class="fileBtn">
+Download Notes
+</a>
+
+</div>
+
+<div class="libraryCard">
+
+<div class="libraryTitle">
+📕 Mathematics PYQs
+</div>
+
+<div>
+Previous year JEE Main maths question papers.
+</div>
+
+<a href="https://jeemain.nta.nic.in/"
+target="_blank"
+class="fileBtn">
+Start Practice
+</a>
+
+</div>
+
+<div class="libraryCard">
+
+<div class="libraryTitle">
+🧪 NCERT Solutions
+</div>
+
+<div>
+Complete NCERT solutions for PCM subjects.
+</div>
+
+<a href="https://ncert.nic.in/textbook.php"
+target="_blank"
+class="fileBtn">
+View Files
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+document.getElementById("content").innerHTML += `
+
+<div class="sportsSection">
+
+<h2>🏅 Sports & Events</h2>
+
+<div class="sportsGrid">
+
+<div class="sportsCard">
+
+<div class="sportsTitle">
+⚽ Football Tournament
+</div>
+
+<div>
+Inter-house football matches will begin next week.
+</div>
+
+<div class="eventDate">
+Date: 5 June 2026
+</div>
+
+</div>
+
+<div class="sportsCard">
+
+<div class="sportsTitle">
+🏏 Cricket Practice Camp
+</div>
+
+<div>
+Morning cricket practice starts daily at 6:00 AM.
+</div>
+
+<div class="eventDate">
+Coach: Sports Department
+</div>
+
+</div>
+
+<div class="sportsCard">
+
+<div class="sportsTitle">
+🎭 Annual Cultural Function
+</div>
+
+<div>
+Dance, music and drama auditions are now open.
+</div>
+
+<div class="eventDate">
+Event Date: 20 June 2026
+</div>
+
+</div>
+
+<div class="sportsCard">
+
+<div class="sportsTitle">
+🏃 Athletics Selection
+</div>
+
+<div>
+100m and relay race trials will be conducted this Friday.
+</div>
+
+<div class="eventDate">
+Venue: School Ground
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+document.getElementById("content").innerHTML += `
+
+<div class="hostelSection">
+
+<h2>🚌 Hostel & Transport</h2>
+
+<div class="hostelGrid">
+
+<div class="hostelCard">
+
+<div class="hostelTitle">
+🏠 Hostel Information
+</div>
+
+<div class="hostelInfo">
+Room No: H-204<br>
+Warden: Mr. Sharma<br>
+Hostel Timing: 7:00 PM Entry
+</div>
+
+</div>
+
+<div class="hostelCard">
+
+<div class="hostelTitle">
+🚌 Bus Transport
+</div>
+
+<div class="hostelInfo">
+Route: Geedam → School Campus<br>
+Bus No: CG-17-2451<br>
+Pickup Time: 7:15 AM
+</div>
+
+</div>
+
+<div class="hostelCard">
+
+<div class="hostelTitle">
+📞 Emergency Contacts
+</div>
+
+<div class="hostelInfo">
+School Office: +91 9876543210<br>
+Transport Incharge: +91 9123456780<br>
+Hostel Warden: +91 9988776655
+</div>
+
+</div>
+
+<div class="hostelCard">
+
+<div class="hostelTitle">
+🍛 Mess Timing
+</div>
+
+<div class="hostelInfo">
+Breakfast: 7:30 AM<br>
+Lunch: 1:00 PM<br>
+Dinner: 8:00 PM
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+document.getElementById("content").innerHTML += `
+
+<div class="settingsSection">
+
+<h2>⚙️ Settings</h2>
+
+<button class="settingsBtn" onclick="openProfileEditor()">
+👤 Edit Profile
+</button>
+
+<button class="settingsBtn" onclick="openNotification()">
+🔔 Notification Settings
+</button>
+
+<button class="settingsBtn" onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
+
+<button class="settingsBtn" onclick="openHelp()">
+📞 Help & Support
+</button>
+
+<button class="logoutBtn" onclick="logout()">
+🚪 Logout
+</button>
+
+</div>
+
+<div class="footer">
+
+🎓 Aastha Vidya Mandir English Medium School<br>
+
+Geedam, Dantewada • Student Portal 2026
+
+</div>
+
+`;
+}
+});
+</script>
+
+</body>
+</html>

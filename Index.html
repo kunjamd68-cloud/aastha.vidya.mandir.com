@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aastha Vidya Mandir English Medium School</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+html {
+  scroll-padding-top: 90px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   ROOT COLORS
+========================= */
+
+:root {
+  --primary: #0B1F3A;
+  --secondary: #FF9933;
+  --white: #ffffff;
+  --light: #f5f7fa;
+  --text: #222222;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0B1F3A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  color: white;
+  transition: 1s;
+}
+
+.loader-circle {
+  width: 80px;
+  height: 80px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid var(--secondary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  background: white;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 7%;
+  background: rgba(11, 31, 58, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--secondary);
+}
+
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menu-btn {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+width:100%;
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url('images/school.jpg');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+padding:20px;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content{
+max-width:900px;
+color:white;
+}
+
+.hero-content h1{
+font-size:4rem;
+font-weight:800;
+margin-bottom:20px;
+line-height:1.3;
+}
+
+.hero-content p{
+font-size:1.1rem;
+line-height:1.8;
+margin-bottom:35px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+padding:14px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+}
+
+/* PRIMARY BUTTON */
+
+.btn-primary{
+background:var(--secondary);
+color:white;
+}
+
+.btn-primary:hover{
+background:white;
+color:var(--primary);
+}
+
+/* SECONDARY BUTTON */
+
+.btn-secondary{
+border:2px solid white;
+color:white;
+}
+
+.btn-secondary:hover{
+background:white;
+color:var(--primary);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section{
+padding:100px 7%;
+background:white;
+}
+
+.about-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:50px;
+align-items:center;
+}
+
+.about-image img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.about-content h4{
+color:var(--secondary);
+margin-bottom:15px;
+font-size:1rem;
+letter-spacing:2px;
+}
+
+.about-content h2{
+font-size:2.7rem;
+color:var(--primary);
+margin-bottom:25px;
+line-height:1.3;
+}
+
+.about-content p{
+line-height:1.9;
+color:#555;
+margin-bottom:20px;
+}
+
+.about-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.about-card{
+background:var(--light);
+padding:25px;
+border-radius:18px;
+text-align:center;
+transition:0.4s;
+}
+
+.about-card:hover{
+transform:translateY(-8px);
+}
+
+.about-card h3{
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.about-card p{
+font-size:0.9rem;
+margin:0;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h4{
+color:var(--secondary);
+letter-spacing:2px;
+margin-bottom:15px;
+font-size:1rem;
+}
+
+.section-title h2{
+font-size:2.8rem;
+color:var(--primary);
+margin-bottom:20px;
+}
+
+.section-title p{
+color:#666;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+}
+
+/* =========================
+   HIGHLIGHTS SECTION
+========================= */
+
+.highlights-section{
+padding:100px 7%;
+background:var(--light);
+}
+
+.highlights-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.highlight-box{
+background:white;
+padding:40px 30px;
+border-radius:22px;
+transition:0.4s;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.highlight-box:hover{
+transform:translateY(-10px);
+}
+
+.highlight-icon{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.highlight-box h3{
+color:var(--primary);
+margin-bottom:15px;
+font-size:1.3rem;
+}
+
+.highlight-box p{
+color:#555;
+line-height:1.8;
+}
+
+/* =========================
+   STATS SECTION
+========================= */
+
+.stats-section{
+padding:80px 7%;
+background:var(--primary);
+}
+
+.stats-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.stat-box{
+background:rgba(255,255,255,0.08);
+padding:40px 20px;
+border-radius:20px;
+transition:0.4s;
+}
+
+.stat-box:hover{
+transform:translateY(-8px);
+}
+
+.stat-box h2{
+font-size:3rem;
+color:var(--secondary);
+margin-bottom:10px;
+}
+
+.stat-box p{
+color:white;
+}
+
+/* =========================
+   PRINCIPAL SECTION
+========================= */
+
+.principal-section{
+padding:100px 7%;
+background:white;
+}
+
+.principal-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:50px;
+align-items:center;
+}
+
+.principal-image img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.principal-content h4{
+color:var(--secondary);
+letter-spacing:2px;
+margin-bottom:15px;
+}
+
+.principal-content h2{
+font-size:2.7rem;
+color:var(--primary);
+margin-bottom:25px;
+line-height:1.3;
+}
+
+.principal-content p{
+line-height:1.9;
+color:#555;
+margin-bottom:20px;
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+.gallery-section{
+padding:100px 7%;
+background:var(--light);
+}
+
+.gallery-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.gallery-item{
+overflow:hidden;
+border-radius:20px;
+}
+
+.gallery-item img{
+width:100%;
+height:280px;
+object-fit:cover;
+transition:0.5s;
+display:block;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section{
+padding:100px 7%;
+background:white;
+}
+
+.contact-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:50px;
+}
+
+.contact-box{
+background:var(--light);
+padding:30px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.contact-box h3{
+color:var(--primary);
+margin-bottom:15px;
+}
+
+.contact-box p{
+color:#555;
+line-height:1.9;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:16px;
+border:none;
+background:var(--light);
+border-radius:15px;
+outline:none;
+font-size:1rem;
+}
+
+.contact-form textarea{
+height:160px;
+resize:none;
+}
+
+.contact-form button{
+padding:16px;
+border:none;
+background:var(--primary);
+color:white;
+font-size:1rem;
+border-radius:15px;
+cursor:pointer;
+transition:0.4s;
+font-weight:600;
+}
+
+.contact-form button:hover{
+background:var(--secondary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+background:var(--primary);
+padding:40px 7%;
+text-align:center;
+color:white;
+}
+
+footer h2{
+margin-bottom:15px;
+}
+
+footer p{
+opacity:0.8;
+line-height:1.8;
+}
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25D366;
+color:white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:1.7rem;
+text-decoration:none;
+z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+transition:0.4s;
+}
+
+.whatsapp-float:hover{
+transform:scale(1.1);
+}
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+.top-btn{
+position:fixed;
+bottom:100px;
+right:25px;
+width:50px;
+height:50px;
+background:var(--primary);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:1.3rem;
+cursor:pointer;
+opacity:0;
+pointer-events:none;
+transition:0.4s;
+z-index:999;
+}
+
+.top-btn.show{
+opacity:1;
+pointer-events:auto;
+}
+
+.top-btn:hover{
+background:var(--secondary);
+}
+
+/* =========================
+   STICKY HEADER
+========================= */
+
+header.sticky{
+background:var(--primary);
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal{
+opacity:0;
+transform:translateY(80px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+nav{
+position:fixed;
+top:0;
+right:-100%;
+width:100%;
+height:100vh;
+background:var(--primary);
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+transition:0.4s;
+}
+
+nav.active{
+right:0;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero-content h1{
+font-size:2.2rem;
+}
+
+.hero-content p{
+font-size:1rem;
+}
+
+}
+
+
+/* 👇 LAST ME PASTE KARO */
+
+#chatBubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#chatBox {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+  overflow: hidden;
+}
+
+/* SHOW CHAT */
+#chatBox.show {
+  display: flex !important;
+}
+
+/* MESSAGES AREA */
+#messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+  gap: 8px;
+  background: #fafafa;
+}
+
+/* MESSAGE STYLE */
+#messages div {
+  max-width: 75%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+/* =========================
+   LIVE CHAT
+========================= */
+
+#chatBubble{
+position:fixed;
+bottom:25px;
+left:25px;
+width:60px;
+height:60px;
+background:#0B1F3A;
+color:white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:1.7rem;
+cursor:pointer;
+z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+#chatBox{
+position:fixed;
+bottom:100px;
+left:25px;
+width:320px;
+height:420px;
+background:white;
+border-radius:20px;
+display:none;
+flex-direction:column;
+overflow:hidden;
+z-index:999;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+#chatHeader{
+position:relative;
+background:#0B1F3A;
+color:white;
+padding:20px;
+font-size:24px;
+font-weight:600;
+text-align:center;
+}
+
+#closeChat{
+position:absolute;
+right:15px;
+top:50%;
+transform:translateY(-50%);
+font-size:28px;
+cursor:pointer;
+color:white;
+}
+
+#messages{
+flex:1;
+padding:15px;
+overflow-y:auto;
+background:#f5f7fa;
+}
+
+#chatInputArea{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+#chatInput{
+flex:1;
+padding:12px;
+border:none;
+outline:none;
+}
+
+#sendChat{
+padding:12px 15px;
+border:none;
+background:#FF9933;
+color:white;
+cursor:pointer;
+font-weight:600;
+}
+
+#chatMenuBtn{
+position:absolute;
+top:10px;
+left:10px;
+font-size:22px;
+cursor:pointer;
+}
+
+#chatMenu{
+position:absolute;
+top:40px;
+left:10px;
+background:white;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+display:none;
+overflow:hidden;
+z-index:1000;
+}
+
+#chatMenu div{
+padding:12px 15px;
+cursor:pointer;
+}
+
+#chatMenu div:hover{
+background:#f5f5f5;
+}
+
+
+.news-card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.news-card:hover{
+transform:translateY(-5px);
+}
+
+.news-card h3{
+color:#0B1F3A;
+margin-bottom:15px;
+}
+
+.news-card p{
+color:#555;
+line-height:1.8;
+margin-bottom:10px;
+}
+</style>
+</head>
+<body>
+
+<!-- =========================
+     LOADER
+========================= -->
+<div class="loader" id="loader">
+  <div class="loader-circle"></div>
+  <h2>
+    Aastha Vidya Mandir
+  </h2>
+</div>
+
+<!-- =========================
+     HEADER
+========================= -->
+<header>
+
+<div class="logo">
+  <img src="images/logo.png" alt="Aastha Vidya Mandir School">
+  <span>
+    Aastha Vidya Mandir
+  </span>
+</div>
+
+<marquee behavior="scroll" direction="left" scrollamount="6">
+🔥 Welcome to Aastha Vidya Mandir English Medium School • JEE / NEET Classes Started • Unit Test From Monday • Admissions Open 2026
+</marquee>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="student.html">Student Login</a>
+  <a href="#academics">Academics</a>
+  <a href="#news">News</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#admission">Admission</a>
+  <a href="#contact">Contact</a>
+  <a href="#admin">Admin</a>
+</nav>
+
+<!-- MENU BUTTON -->
+<div class="menu-btn" id="menuBtn">
+  ☰
+</div>
+
+</header>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+Building Future Leaders of Bastar
+</h1>
+
+<p>
+AASTHA VIDYA MANDIR ENGLISH MEDIUM SCHOOL
+<br>
+Jawanga, Geedam, Dantewada
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contact" class="btn-primary">
+Apply Admission
+</a>
+
+<a href="#gallery" class="btn-secondary">
+Explore Campus
+</a>
+
+<!-- STUDENT LOGIN -->
+<a id="studentLoginBtn"
+href="student.html"
+class="btn-primary">
+Student Login
+</a>
+
+<!-- STUDENT DASHBOARD -->
+<a id="dashboardBtn"
+href="student-dashboard.html"
+class="btn-primary"
+style="display:none;">
+Student Dashboard
+</a>
+
+<!-- ADMIN -->
+<a href="admin.html" class="btn-secondary">
+Admin Login
+</a>
+
+</div>
+</div>
+
+</section>
+
+<!-- =========================
+     ABOUT SECTION
+========================= -->
+<section class="about-section reveal" id="about">
+
+<div class="about-container">
+
+<!-- LEFT IMAGE -->
+<div class="about-image">
+<img src="images/about.jpg" alt="Aastha Vidya Mandir School">
+</div>
+
+<!-- RIGHT CONTENT -->
+<div class="about-content">
+
+<h4>
+ABOUT OUR SCHOOL
+</h4>
+
+<h2>
+Inspiring Excellence Through Education
+</h2>
+
+<p>
+Aastha Vidya Mandir English Medium School is dedicated to providing modern education with discipline, values, innovation and holistic development.
+</p>
+
+<p>
+Located in Jawanga, Geedam, Dantewada, the school empowers students with academic excellence, leadership skills, cultural values and confidence for a brighter future.
+</p>
+
+<div class="about-cards">
+
+<div class="about-card">
+<h3>CBSE</h3>
+<p>Affiliated Quality Education</p>
+</div>
+
+<div class="about-card">
+<h3>Modern</h3>
+<p>Smart Learning Environment</p>
+</div>
+
+<div class="about-card">
+<h3>Hostel</h3>
+<p>Safe Residential Facility</p>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- =========================
+     HIGHLIGHTS SECTION
+========================= -->
+<section class="highlights-section reveal" id="academics">
+
+<div class="section-title">
+
+<h4>WHY CHOOSE US</h4>
+
+<h2>School Highlights</h2>
+
+<p>
+Modern facilities and quality education for complete student development.
+</p>
+
+</div>
+
+<div class="highlights-container">
+
+<!-- CARD 1 -->
+<div class="highlight-box">
+<div class="highlight-icon">🎓</div>
+<h3>CBSE Curriculum</h3>
+<p>Structured education with modern teaching methods and strong academic foundation.</p>
+</div>
+
+<!-- CARD 2 -->
+<div class="highlight-box">
+<div class="highlight-icon">💻</div>
+<h3>Smart Classrooms</h3>
+<p>Technology-enabled classrooms for interactive and advanced learning experience.</p>
+</div>
+
+<!-- CARD 3 -->
+<div class="highlight-box">
+<div class="highlight-icon">🏆</div>
+<h3>Sports Activities</h3>
+<p>Physical fitness, teamwork and leadership development through sports activities.</p>
+</div>
+
+<!-- CARD 4 -->
+<div class="highlight-box">
+<div class="highlight-icon">🏠</div>
+<h3>Hostel Facility</h3>
+<p>Safe and disciplined hostel facilities for students from remote regions.</p>
+</div>
+
+<!-- CARD 5 -->
+<div class="highlight-box">
+<div class="highlight-icon">📚</div>
+<h3>Library & Labs</h3>
+<p>Well-equipped science labs, computer labs and library for practical learning.</p>
+</div>
+
+<!-- CARD 6 -->
+<div class="highlight-box">
+<div class="highlight-icon">🌟</div>
+<h3>Holistic Growth</h3>
+<p>Focus on personality development, discipline, values and future success.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LIVE NEWS SECTION
+========================= -->
+
+<section class="highlights-section reveal" id="news">
+
+<div class="section-title">
+<h4>LATEST NEWS</h4>
+<h2>Live News Updates</h2>
+<p>Stay updated with latest news.</p>
+</div>
+
+<div id="newsContainer">
+
+  <div class="news-card">
+    <h3>🇮🇳 National News</h3>
+    <div id="nationalNews">Loading...</div>
+  </div>
+
+  <div class="news-card">
+    <h3>🌍 International News</h3>
+    <div id="internationalNews">Loading...</div>
+  </div>
+
+  <div class="news-card">
+    <h3>🌳 Chhattisgarh News</h3>
+    <div id="cgNews">Loading...</div>
+  </div>
+
+  <div class="news-card">
+    <h3>🏏 Sports News</h3>
+    <div id="sportsNews">Loading...</div>
+  </div>
+
+</div>
+
+</section>
+
+<section class="highlights-section reveal">
+
+<div class="section-title">
+  <h4>LATEST UPDATES</h4>
+  <h2>Notice Board</h2>
+  <p>Important announcements and latest school updates.</p>
+</div>
+
+<div id="noticeContainer"
+style="
+display:grid;
+gap:20px;
+max-width:900px;
+margin:auto;
+">
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     STATS SECTION
+========================= -->
+<section class="stats-section">
+
+<div class="stats-container">
+
+<div class="stat-box">
+<h2 class="counter" data-target="1300">0</h2>
+<p>Students</p>
+</div>
+
+<div class="stat-box">
+<h2 class="counter" data-target="75">0</h2>
+<p>Qualified Teachers</p>
+</div>
+
+<div class="stat-box">
+<h2 class="counter" data-target="25">0</h2>
+<p>Smart Classrooms</p>
+</div>
+
+<div class="stat-box">
+<h2 class="counter" data-target="100">0</h2>
+<p>Success Rate</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     PRINCIPAL SECTION
+========================= -->
+<section class="principal-section">
+
+<div class="principal-container">
+
+<!-- IMAGE -->
+<div class="principal-image">
+<img src="images/principal.jpg" alt="Aastha Vidya Mandir School">
+</div>
+
+<!-- CONTENT -->
+<div class="principal-content">
+
+<h4>PRINCIPAL MESSAGE</h4>
+
+<h2>Welcome To Aastha Vidya Mandir</h2>
+
+<p>
+Our mission is to provide quality education with discipline, confidence, leadership and strong moral values.
+</p>
+
+<p>
+We believe every student has the potential to achieve greatness through dedication, proper guidance and continuous learning.
+</p>
+
+<p>
+At Aastha Vidya Mandir English Medium School, we strive to create a positive environment where students grow academically, socially and emotionally.
+</p>
+
+<a href="#" class="btn-primary">
+Read More
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     GALLERY SECTION
+========================= -->
+<section class="gallery-section reveal" id="gallery">
+
+  <div class="section-title">
+    <h4>OUR CAMPUS</h4>
+    <h2>School Gallery</h2>
+    <p>Moments, memories and beautiful glimpses of school life.</p>
+  </div>
+
+  <!-- RANDOM 6 IMAGES PREVIEW -->
+  <div class="gallery-container" id="galleryPreview">
+  </div>
+
+</section>
+
+<!-- VIEW ALL BUTTON -->
+<div style="text-align:center; margin-top:20px;">
+  <button id="viewGalleryBtn" style="
+    padding:12px 25px;
+    border:none;
+    background:#0B1F3A;
+    color:white;
+    font-size:16px;
+    border-radius:10px;
+    cursor:pointer;
+  ">
+    View All Images
+  </button>
+</div>
+
+<!-- FULL GALLERY MODAL -->
+<div id="galleryModal" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  z-index:9999;
+  overflow:auto;
+">
+
+  <!-- CLOSE BUTTON -->
+  <span id="closeGallery" style="
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:35px;
+    color:white;
+    cursor:pointer;
+  ">×</span>
+
+  <!-- ALL IMAGES -->
+  <div id="allGalleryImages" style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    padding:80px 20px;
+  ">
+  </div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     ADMISSION SECTION
+========================= -->
+<section class="contact-section reveal" id="admission">
+
+<div class="section-title">
+  <h4>ONLINE ADMISSION</h4>
+  <h2>Admission Form</h2>
+  <p>Apply online for admission at Aastha Vidya Mandir.</p>
+</div>
+
+<div class="contact-container">
+
+<div class="contact-form">
+
+<input type="text" id="studentName" placeholder="Student Name">
+
+<input type="text" id="fatherName" placeholder="Father Name">
+
+<input type="text" id="className" placeholder="Class">
+
+<input type="tel" id="mobileNumber" placeholder="Mobile Number">
+
+<textarea id="address" placeholder="Address"></textarea>
+
+<button id="admissionBtn">
+Apply Admission
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+<section class="contact-section reveal" id="contact">
+
+<div class="section-title">
+  <h4>CONTACT US</h4>
+  <h2>Get In Touch</h2>
+  <p>Feel free to contact Aastha Vidya Mandir English Medium School.</p>
+</div>
+
+<div class="contact-container">
+
+<!-- LEFT -->
+<div class="contact-info">
+
+<div class="contact-box">
+  <h3>📍 Address</h3>
+  <p>
+    Aastha Vidya Mandir English Medium School<br>
+    Jawanga, Geedam, Dantewada<br>
+    Chhattisgarh - 494441
+  </p>
+</div>
+
+<div class="contact-box">
+  <h3>📞 Phone</h3>
+  <p>+91 8817482512</p>
+</div>
+
+<div class="contact-box">
+  <h3>✉ Email</h3>
+  <p>info@aasthavidyamandirschool.com</p>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="contact-form">
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="email" id="email" placeholder="Your Email">
+
+<textarea id="message" placeholder="Your Message"></textarea>
+
+<button id="sendBtn">
+Send Message
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================  
+     ADMIN LOGIN SECTION  
+========================= -->  
+<section class="contact-section reveal" id="admin">  
+  <div class="section-title">  
+    <h4>ADMIN PANEL</h4>  
+    <h2>Principal Login</h2>  
+    <p>Secure login for school administration.</p>  
+  </div> 
+
+  <div class="contact-container">  
+    <div class="contact-form">  
+      <input type="email" id="adminEmail" placeholder="Admin Email"> 
+      <input type="password" id="adminPassword" placeholder="Admin Password">  
+      <button id="adminLoginBtn">
+Login
+</button>
+    </div>  
+  </div>  
+</section>  
+
+<!-- =========================  
+     FOOTER  
+========================= --> 
+<footer>  
+  <h2>Aastha Vidya Mandir</h2> 
+  <p>English Medium School • Jawanga, Geedam, Dantewada</p> 
+  <p>© 2026 All Rights Reserved</p>  
+</footer> 
+
+<!-- =========================
+     LIVE CHAT BUTTON
+========================= -->
+
+<div id="chatBubble">
+💬
+</div>
+
+<div id="chatBox">
+
+<div id="chatHeader">
+
+<div id="chatMenuBtn">⋮</div>
+
+Live Chat
+
+<span id="closeChat">✕</span>
+
+<div id="chatMenu">
+  <div id="copyMsg">📋 Copy Message</div>
+  <div id="deleteMsg">🗑 Delete Message</div>
+</div>
+
+</div>
+
+<div id="messages"></div>
+
+<div id="chatInputArea">
+<input
+type="text"
+id="chatInput"
+placeholder="Type message..."
+>
+
+<button id="sendChat">
+Send
+</button>
+</div>
+
+</div>
+
+<!-- =========================  
+     WHATSAPP BUTTON  
+========================= -->  
+<a href="https://api.whatsapp.com/send?phone=918817482512"  
+   class="whatsapp-float"  
+   target="_blank">
+💬
+</a> 
+
+<!-- =========================  
+     TOP BUTTON  
+========================= -->  
+<div class="top-btn" id="topBtn">↑</div>  
+
+<script type="module">
+
+// FIREBASE IMPORTS
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  onSnapshot
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import {
+  getAuth,
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+// FIREBASE CONFIG
+const firebaseConfig = {
+  apiKey: "AIzaSyCUL7XkQQGiQmYqORGxemvzVx8gmdpNaT8",
+  authDomain: "aastha-vidya-mandir.firebaseapp.com",
+  projectId: "aastha-vidya-mandir",
+  storageBucket: "aastha-vidya-mandir.firebasestorage.app",
+  messagingSenderId: "1092138801537",
+  appId: "1:1092138801537:web:c9954a5ccdb9dc845bb080",
+  measurementId: "G-KL15YPQ3N3"
+};
+
+// INITIALIZE FIREBASE
+const app = initializeApp(firebaseConfig);
+
+// DATABASE + AUTH
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+console.log("Firebase Connected Successfully");
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+
+menuBtn.onclick = () => {
+  navbar.classList.toggle("active");
+
+  if (navbar.classList.contains("active")) {
+    menuBtn.innerHTML = "✕";
+  } else {
+    menuBtn.innerHTML = "☰";
+  }
+};
+
+
+/* =========================
+   AUTO CLOSE MENU
+========================= */
+
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("active");
+    menuBtn.innerHTML = "☰";
+  });
+});
+
+// =========================
+// COUNTER ANIMATION
+// =========================
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+  counter.innerText = "0";
+
+  const updateCounter = () => {
+    const target = +counter.getAttribute("data-target");
+    const c = +counter.innerText;
+    const increment = target / 100;
+
+    if (c < target) {
+      counter.innerText = `${Math.ceil(c + increment)}`;
+      setTimeout(updateCounter, 25);
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+
+  updateCounter();
+});
+
+
+// =========================
+// STICKY NAVBAR
+// =========================
+
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 50);
+});
+
+
+// =========================
+// TOP BUTTON
+// =========================
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+  if (!topBtn) return; // safety check
+
+  if (window.scrollY > 500) {
+    topBtn.classList.add("show");
+  } else {
+    topBtn.classList.remove("show");
+  }
+});
+
+if(topBtn){
+
+topBtn.onclick = () => {
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+};
+
+}
+
+/* =========================
+SCROLL REVEAL
+========================= */
+
+function reveal() {
+  const reveals = document.querySelectorAll(".reveal");
+
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if (revealTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+
+/* =========================
+LOADER
+========================= */
+
+window.addEventListener("load", () => {
+const loader =
+document.getElementById("loader");
+
+if(loader)
+loader.classList.add("hide");
+});
+
+
+/* =========================
+ADMISSION FORM
+========================= */
+
+const admissionBtn = document.getElementById("admissionBtn");
+
+if (admissionBtn) {
+  admissionBtn.addEventListener("click", async () => {
+
+    const studentName = document.getElementById("studentName").value;
+    const fatherName = document.getElementById("fatherName").value;
+    const className = document.getElementById("className").value;
+    const mobileNumber = document.getElementById("mobileNumber").value;
+    const address = document.getElementById("address").value;
+
+    if (
+      studentName === "" ||
+      fatherName === "" ||
+      className === "" ||
+      mobileNumber === "" ||
+      address === ""
+    ) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "admissions"), {
+        studentName,
+        fatherName,
+        className,
+        mobileNumber,
+        address,
+        status: "pending",
+        time: new Date()
+      });
+
+      alert("Admission Applied Successfully");
+
+      // CLEAR FORM
+      document.getElementById("studentName").value = "";
+      document.getElementById("fatherName").value = "";
+      document.getElementById("className").value = "";
+      document.getElementById("mobileNumber").value = "";
+      document.getElementById("address").value = "";
+
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  });
+}
+
+
+/* =========================
+CONTACT FORM
+========================= */
+
+const sendBtn = document.getElementById("sendBtn");
+
+if (sendBtn) {
+  sendBtn.addEventListener("click", async () => {
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "messages"), {
+        name,
+        email,
+        message,
+        time: new Date()
+      });
+
+      alert("Message Sent Successfully");
+
+      // CLEAR FORM
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  });
+}
+
+
+/* =========================
+ADMIN LOGIN
+========================= */
+
+const loginBtn =
+document.getElementById("adminLoginBtn");
+
+if(loginBtn){
+
+loginBtn.addEventListener("click",()=>{
+
+const email =
+document.getElementById("adminEmail").value;
+
+const password =
+document.getElementById("adminPassword").value;
+
+signInWithEmailAndPassword(
+auth,
+email,
+password
+)
+
+.then(()=>{
+
+alert("Login Successful");
+
+window.location.href =
+"admin.html";
+
+})
+
+.catch(()=>{
+
+alert("Wrong Email or Password");
+
+});
+
+});
+
+}
+
+/* =========================
+LOAD NOTICES
+========================= */
+
+const noticeContainer = document.getElementById("noticeContainer");
+
+async function loadNotices(){
+
+try{
+
+noticeContainer.innerHTML = "";
+
+const querySnapshot =
+await getDocs(
+collection(db,"notices")
+);
+
+querySnapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+noticeContainer.innerHTML += `
+<div style="
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+">
+<h3 style="color:#0B1F3A;margin-bottom:10px;">
+📢 School Notice
+</h3>
+<p style="color:#555;line-height:1.8;">
+${data.text}
+</p>
+</div>
+`;
+
+});
+
+}catch(error){
+
+console.error(error);
+
+}
+
+}
+
+/* =========================
+   LIVE CHAT
+========================= */
+
+const chatBubble =
+document.getElementById("chatBubble");
+
+const chatBox =
+document.getElementById("chatBox");
+
+const closeChat =
+document.getElementById("closeChat");
+
+const sendChat =
+document.getElementById("sendChat");
+
+const chatInput =
+document.getElementById("chatInput");
+
+const messages =
+document.getElementById("messages");
+
+// OPEN CHAT
+
+chatBubble.onclick = () => {
+  chatBox.style.display = "flex";
+};
+
+// CLOSE CHAT
+
+closeChat.onclick = () => {
+  chatBox.style.display = "none";
+};
+
+// SEND MESSAGE
+
+sendChat.onclick = async () => {
+
+const text = chatInput.value.trim();
+
+if(text === "") return;
+
+try{
+
+await addDoc(
+collection(db,"liveChat"),
+{
+message:text,
+sender:"student",
+time:new Date()
+}
+);
+
+chatInput.value="";
+
+}catch(error){
+
+console.error(error);
+
+}
+
+};
+
+/* =========================
+   LOAD LIVE CHAT
+========================= */
+
+const q = query(
+collection(db,"liveChat"),
+orderBy("time","asc")
+);
+
+onSnapshot(q,(snapshot)=>{
+
+messages.innerHTML = "";
+
+snapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+messages.innerHTML += `
+<div style="
+background:${
+data.sender==="admin"
+? "#FF9933"
+: "#0B1F3A"
+};
+color:white;
+padding:10px;
+border-radius:10px;
+margin-bottom:10px;
+max-width:80%;
+${data.sender==="student"
+? "margin-left:auto;"
+: ""}
+">
+${data.message}
+</div>
+`;
+
+});
+
+messages.scrollTop =
+messages.scrollHeight;
+
+});
+
+
+// ALL IMAGES
+const galleryImages = [
+  "images/gallery1.jpg",
+  "images/gallery2.jpg",
+  "images/gallery3.jpg",
+  "images/gallery4.jpg",
+  "images/gallery5.jpg",
+  "images/gallery6.jpg",
+  "images/gallery7.jpg",
+  "images/gallery8.jpg",
+  "images/gallery9.jpg",
+  "images/gallery10.jpg"
+];
+
+// SHOW ALL IMAGES IN MODAL
+const allGallery = document.getElementById("allGalleryImages");
+
+galleryImages.forEach(img => {
+  allGallery.innerHTML += `
+    <img src="${img}" style="
+      width:100%;
+      border-radius:10px;
+    ">
+  `;
+});
+
+// RANDOM 6 IMAGES
+function updateGalleryPreview() {
+
+  const preview = document.getElementById("galleryPreview");
+
+  preview.innerHTML = "";
+
+  const shuffled = [...galleryImages]
+    .sort(() => Math.random() - 0.5);
+
+  const sixImages = shuffled.slice(0, 6);
+
+  sixImages.forEach(img => {
+
+    preview.innerHTML += `
+      <div class="gallery-item">
+        <img src="${img}" alt="">
+      </div>
+    `;
+
+  });
+
+}
+
+// FIRST LOAD
+updateGalleryPreview();
+
+// CHANGE EVERY 30 SECONDS
+setInterval(updateGalleryPreview, 10000);
+
+// OPEN MODAL
+document.getElementById("viewGalleryBtn").onclick = () => {
+  document.getElementById("galleryModal").style.display = "block";
+};
+
+// CLOSE MODAL
+document.getElementById("closeGallery").onclick = () => {
+  document.getElementById("galleryModal").style.display = "none";
+};
+
+// CLOSE ON OUTSIDE CLICK
+document.getElementById("galleryModal").onclick = (e) => {
+  if (e.target.id === "galleryModal") {
+    document.getElementById("galleryModal").style.display = "none";
+  }
+};
+
+
+// IMAGE POPUP
+
+function openImage(src){
+
+  history.pushState({popup:true}, "");
+
+  const popup = document.createElement("div");
+
+  popup.id = "imagePopup";
+
+  popup.style.cssText = `
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    cursor:pointer;
+  `;
+
+  popup.innerHTML = `
+    <img src="${src}" style="
+      max-width:95%;
+      max-height:95%;
+      border-radius:10px;
+    ">
+  `;
+
+  document.body.appendChild(popup);
+
+}
+
+// IMAGE CLICK
+document.addEventListener("click",(e)=>{
+
+  if(
+    e.target.tagName === "IMG" &&
+    !document.getElementById("imagePopup")
+  ){
+    openImage(e.target.src);
+  }
+
+});
+
+// BACK BUTTON HANDLE
+window.addEventListener("popstate",()=>{
+
+  const popup =
+  document.getElementById("imagePopup");
+
+  if(popup){
+    popup.remove();
+  }
+
+});
+
+// CLICK OUTSIDE TO CLOSE
+document.addEventListener("click",(e)=>{
+
+  if(e.target.id === "imagePopup"){
+
+    e.target.remove();
+
+    history.back();
+
+  }
+
+});
+
+
+
+/* =========================
+   LIVE NEWS SECTION (FINAL)
+========================= */
+
+const NEWS_API_KEY = "272dd74b3ffa4e63a7b5f4034e04264d";
+
+/* 🔹 Fetch function */
+async function fetchNews(query, elementId) {
+
+  const container = document.getElementById(elementId);
+  if (!container) return;
+
+  container.innerHTML = "<p>Loading...</p>";
+
+  try {
+
+    const url = `https://newsapi.org/v2/everything?q=${query}&sortBy=publishedAt&pageSize=3&apiKey=${NEWS_API_KEY}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(query, data);
+
+    if (data.status !== "ok" || !data.articles || data.articles.length === 0) {
+      container.innerHTML = "<p>No news available</p>";
+      return;
+    }
+
+    container.innerHTML = data.articles.map(article => `
+      <p>
+        🔹 ${article.title}<br>
+        <a href="${article.url}" target="_blank">Read More →</a>
+      </p>
+      <hr>
+    `).join("");
+
+  } catch (error) {
+    console.log(error);
+    container.innerHTML = "<p>Failed to load news</p>";
+  }
+}
+
+/* 🔥 Load All Categories */
+function loadAllNews() {
+
+  fetchNews("india national", "nationalNews");
+
+  fetchNews("world international", "internationalNews");
+
+  fetchNews("chhattisgarh", "cgNews");
+
+  fetchNews("sports", "sportsNews");
+
+}
+
+/* 🚀 First Load */
+loadAllNews();
+
+/* 🔄 Auto Refresh every 30 min */
+setInterval(loadAllNews, 1800000);
+
+
+const chatMenuBtn =
+document.getElementById("chatMenuBtn");
+
+const chatMenu =
+document.getElementById("chatMenu");
+
+chatMenuBtn.onclick = ()=>{
+
+chatMenu.style.display =
+chatMenu.style.display==="block"
+? "none"
+: "block";
+
+};
+
+document
+.getElementById("deleteMsg")
+.onclick = ()=>{
+
+const msgs =
+document.querySelectorAll("#messages div");
+
+if(msgs.length>0){
+
+msgs[msgs.length-1].remove();
+
+}
+
+};
+
+
+
+
+document
+.getElementById("copyMsg")
+.onclick = ()=>{
+
+const msgs =
+document.querySelectorAll("#messages div");
+
+if(msgs.length>0){
+
+navigator.clipboard.writeText(
+msgs[msgs.length-1].innerText
+);
+
+alert("Copied");
+
+}
+
+};
+</script>
+</body>
+</html>
